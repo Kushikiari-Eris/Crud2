@@ -6,11 +6,13 @@ if(process.env.NODE_ENV != "production"){
 const express = require('express');
 const connectToDb = require('./config/connectToDb.js');
 const itemController = require('./controllers/itemController.js');
+const cors = require('cors');
 
 
 
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 
 connectToDb();
